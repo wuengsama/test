@@ -1,0 +1,45 @@
+﻿@model PostUrlVM
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<section class ="landing py-5">
+    <div class="container">
+        <div class ="row align-items-center">
+            <div class="col-lg-4">
+                <img src = "~/img/short.png" class="img-fluid" alt="" />
+            </div>
+            
+            <div>
+                <h1 class="col-lg-8">
+                    <h1 class="display-4">BEST URL SHORTENER</h1>
+                    <p class="lead">
+                        YOU CAN SHORT YOUR LINKS HERE
+                    </p>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <div>
+        <div class="url-shorten-feature">
+            <form class="url-shorten-form" id="url-shorten-form"
+            asp-controller="Home"
+            asp-action="ShortenUrl">
+                <div>
+                    <input 
+                        asp-for="Url" 
+                        type="text" 
+                        class="url-input"  
+                        placeholder="Place your URL Here"
+                        autocomplete="off"/>
+                    <span class="alert"></span>
+                </div>
+                <button type="submit" class="btn btn-lg" style="">Submit</button>
+            </form>
+            <div class="url-shorten-results"></div>
+        </div>
+    </div>
+</section>
